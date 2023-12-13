@@ -10,7 +10,7 @@ import math
 # ?###???????? 3,2,1 - 10 arrangement
 
 day = "12"
-testing = True
+testing = False
 
 def unique_permutations(elements):
     if len(elements) == 1:
@@ -36,8 +36,8 @@ class Spring:
         self.total_broken_springs = sum(self.numerical_summary)
         self.broken_springs_to_be_assigned = self.total_broken_springs - self.known_broken_springs
         simplest_order = list(itertools.repeat('#',self.broken_springs_to_be_assigned))+list(itertools.repeat('.',self.question_marks-self.broken_springs_to_be_assigned))
-        self.all_orders = set(unique_permutations(simplest_order))
-        self.valid_orders = self.get_valid_orders()
+        # self.all_orders = set(unique_permutations(simplest_order))
+        # self.valid_orders = self.get_valid_orders()
 
 
         # print(self.raw_spring)
@@ -112,8 +112,8 @@ def solvePart2():
         spring = Spring(line,4)
         question_marks.append(spring.raw_spring.count('?'))
         print(spring)
-        print(len(spring.valid_orders))
-        solution += len(spring.valid_orders)
+        # print(len(spring.valid_orders))
+        # solution += len(spring.valid_orders)
     print(f'Solution is {solution}')
 
 
